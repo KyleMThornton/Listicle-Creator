@@ -11,11 +11,7 @@ reddit = praw.Reddit(
 subreddit = reddit.subreddit("askreddit")
 
 for submission in subreddit.hot(limit=1):
-    print("This week, Reddit user u/", submission.author, "posed the question,",submission.title,"and there were so many interesting responses! Here are some of the top-voted answers:")
-    #print(submission.title)
-    #print(submission.score)
-    #print(submission.id)
-    #print(submission.url)
+    print("This week, Reddit user u/", submission.author, "posed the question,",submission.title," and there were so many interesting responses! Here are some of the top-voted answers:")
     submission.comment_sort = "top"
     top_level_comments = list(submission.comments)
     x = 0
